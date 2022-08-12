@@ -2,11 +2,14 @@
 Autores:
 
 Hernán Campos
+
 Jean Mejia
+
 
 Objetivo General
 
 Realizar el control de una prótesis activa detectando las señales electromiográficas en una zona específica del antebrazo (cercana al codo) con un sensor Myoware, de modo que, en ella se repliquen determinados movimientos de la mano.
+
 
 Objetivos Específicos
 
