@@ -1,5 +1,6 @@
 #include <Servo.h>
- 
+
+//Declarar los Servomotores
 Servo pulgar;
 Servo pulgarDedo;
 Servo indice;
@@ -98,6 +99,7 @@ void ok() {
 int dato=0;
 
 void setup() {
+  //Comunicación Serial
   Serial.begin(9600);
   
   //Pines de los Servo
@@ -107,7 +109,7 @@ void setup() {
   medio.attach(6);
   dobles.attach(5);
   
-  //Mano Abierta
+  //Mano Abierta - Se inicia con la mano abierta
   pulgar.write(50);
   pulgarDedo.write(130);
   indice.write(110);
@@ -116,10 +118,13 @@ void setup() {
 }
  
 void loop() {
+  //Probar la Comunicación Serial
   if (Serial.available()){
     Serial.println("Disponible");
     delay(500);
+    //Leer mensaje enviado
     dato = Serial.read();
+    //Cadena IF - ELSEIF para realizar cada acción
     if (dato == '1'){
       Serial.println("Cerrar Mano");
       cerrarMano();
@@ -141,6 +146,7 @@ void loop() {
       delay(2000);  
     }
   }
+  //Abre la mano al no recibir mensaje
   Serial.println("Abrir Mano");
   abrirMano();
   delay(500);
